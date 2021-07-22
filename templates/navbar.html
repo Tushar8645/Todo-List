@@ -3,9 +3,9 @@
         <a class="navbar-brand" href="{% url 'main:home_view' %}">To-Do List</a>
         {% block branding %}
 
-        <button type="button" class="btn btn-dark float-end">
-            <a href="{% url 'admin:index' %}" class="admin-link">Admin</a>
-        </button>
+        <a href="{% url 'admin:index' %}" class="admin-link">
+            <button type="button" class="btn btn-dark float-end">Admin</button>
+        </a>
 
         {% endblock branding %}
     </div>
