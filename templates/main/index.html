@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+
+{% for message in messages %}
+
+<div class="alert alert-success alert-dismissible">
+    {{ message }}
+    <a href="{% url 'main:home_view' %}" class="content">&times;</a>
+</div>
+
+{% endfor %}
+
+{% endif %}
+
+<form class="form-inline" action="{% url 'main:home_view' %}" method="POST">
+    <input type="text" class="form-control" name="item" placeholder="Type Here...">
+
+    <p></p>
+
+    <button type="submit" class="btn btn-primary">Add Item</button>
+</form>
+
+<br>
+
+{% if all_items %}
+
+<table class="table table-bordered">
+
+    {% for things in all_items %}
+
+    {% if things.completed %}
+
+    <tr class="table-secondary">
+        <td class="sticker">
+            <a href="{% url 'main:update_view' things.pk %}">{{ things.item }}</a>
+        </td>
+        <td class="table-text">
+            <a href="{% url 'main:uncross' things.pk %}">Incompleted</a>
+        </td>
+        <td class="table-text">
+            <a href="{% url 'main:delete_view' things.pk %}">Delete</a>
+        </td>
+    </tr>
+
+    {% else %}
+
+    <tr>
+        <td>
+            <a href="{% url 'main:update_view' things.pk %}">{{ things.item }}</a>
+        </td>
+        <td class="table-text">
+            <a href="{% url 'main:cross_off' things.pk %}">Completed</a>
+        </td>
+        <td class="table-text">
+            <a href="{% url 'main:delete_view' things.pk %}">Delete</a>
+        </td>
+    </tr>
+
+    {% endif %}
+
+    {% endfor %}
+
+</table>
+
+{% endif %}
+
+{% endblock content %}

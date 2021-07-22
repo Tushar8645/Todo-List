@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if item %}
+
+<form class="form-inline" action="{% url 'main:update_view' item.pk %}" method="POST">
+    <label for="id_item">Item:</label>
+    <input type="text" id="id_item" class="form-control" name="item" value="{{ item.item }}">
+
+    <br>
+
+    {% if item.completed %}
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="id_completed" name="completed" checked>
+        <label class="form-check-label" for="id_completed">Completed</label>
+    </div>
+
+    {% else %}
+
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="id_completed" name="completed">
+        <label class="form-check-label" for="id_completed">Completed</label>
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <input type="submit" class="btn btn-primary" value="Submit">
+    <input type="submit" class="btn btn-danger" onclick="window.location='{% url 'main:home_view' %}' ; return false;"
+        value="Cancel">
+</form>
+
+{% endif %}
+
+{% endblock content %}

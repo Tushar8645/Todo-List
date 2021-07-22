@@ -1,0 +1,17 @@
+.table-text {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sticker {
+  text-decoration: line-through;
+  color: #0d6efd;
+}
+
+.content {
+  float: right;
+  padding-left: 1em;
+}
