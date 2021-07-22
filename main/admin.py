@@ -3,7 +3,7 @@ from main.models import List
 
 
 class ListAdmin(admin.ModelAdmin):
-    list_display = ('item', 'completed', 'created', 'modified',)
+    list_display = ('item', 'completed',)
     readonly_fields = ('created', 'modified',)
 
 

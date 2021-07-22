@@ -1,17 +1,25 @@
-.table-text {
-  text-align: center;
-}
-
 a {
   text-decoration: none;
 }
 
 .sticker {
   text-decoration: line-through;
-  color: #0d6efd;
 }
 
 .content {
   float: right;
   padding-left: 1em;
+}
+
+.box-text {
+  text-align: center;
+}
+
+.admin-link {
+  text-decoration: none;
+  color: white;
+}
+
+.admin-link:hover {
+  color: whitesmoke;
 }

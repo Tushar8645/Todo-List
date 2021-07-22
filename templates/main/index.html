@@ -33,15 +33,15 @@
 
     {% if things.completed %}
 
-    <tr class="table-secondary">
+    <tr class="table-secondary mt-3">
         <td class="sticker">
             <a href="{% url 'main:update_view' things.pk %}">{{ things.item }}</a>
         </td>
-        <td class="table-text">
-            <a href="{% url 'main:uncross' things.pk %}">Incompleted</a>
+        <td class="box-text">
+            <a href="{% url 'main:uncross' things.pk %}"" class="table-text">Incompleted</a>
         </td>
-        <td class="table-text">
-            <a href="{% url 'main:delete_view' things.pk %}">Delete</a>
+        <td class="box-text">
+            <a href="{% url 'main:delete_view' things.pk %}" class="table-text">Delete</a>
         </td>
     </tr>
 
@@ -51,11 +51,11 @@
         <td>
             <a href="{% url 'main:update_view' things.pk %}">{{ things.item }}</a>
         </td>
-        <td class="table-text">
-            <a href="{% url 'main:cross_off' things.pk %}">Completed</a>
+        <td class="box-text">
+            <a href="{% url 'main:cross_off' things.pk %}" class="table-text">Completed</a>
         </td>
-        <td class="table-text">
-            <a href="{% url 'main:delete_view' things.pk %}">Delete</a>
+        <td class="box-text">
+            <a href="{% url 'main:delete_view' things.pk %}" class="table-text">Delete</a>
         </td>
     </tr>
 
